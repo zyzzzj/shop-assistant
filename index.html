@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小卖部智能助手</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- 登录/注册容器 -->
+<div id="loginContainer" class="login-container">
+    <div class="login-box">
+        <h2 id="formTitle">商家登录</h2>
+        <input type="text" id="username" placeholder="用户名">
+        <input type="password" id="password" placeholder="密码">
+        <button id="submitBtn" onclick="login()">登录</button>
+        <p class="hint" id="toggleText">还没有账号？<a href="javascript:void(0)" onclick="toggleForm()">立即注册</a></p>
+    </div>
+</div>
+
+<!-- 聊天容器 -->
+<div id="chatContainer" class="chat-container" style="display: none;">
+    <div class="chat-header">
+        <h2>小卖部智能助手</h2>
+        <div>
+            <button id="adminBtn" onclick="toggleAdmin()" style="display: none; margin-right: 10px;">商品管理</button>
+            <button onclick="logout()">退出</button>
+        </div>
+    </div>
+    <div id="chatMessages" class="chat-messages"></div>
+    <div class="chat-input">
+        <input type="text" id="messageInput" placeholder="输入你的问题...">
+        <button onclick="sendMessage()">发送</button>
+    </div>
+</div>
+
+<!-- 管理员商品管理容器 -->
+<div id="adminContainer" class="admin-container" style="display: none;">
+    <div class="admin-header">
+        <h2>商品管理</h2>
+        <button onclick="toggleAdmin()">返回聊天</button>
+    </div>
+    <div class="admin-content">
+        <div class="add-product">
+            <h3>添加商品</h3>
+            <input type="text" id="addName" placeholder="商品名称">
+            <input type="number" id="addPrice" placeholder="价格" step="0.01">
+            <input type="number" id="addStock" placeholder="库存">
+            <input type="text" id="addCategory" placeholder="分类">
+            <button onclick="addProduct()">添加</button>
+        </div>
+        <div class="product-list">
+            <h3>商品列表</h3>
+            <table id="productTable">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>名称</th>
+                    <th>价格</th>
+                    <th>库存</th>
+                    <th>分类</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody id="productTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

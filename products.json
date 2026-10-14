@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "可乐",
+    "price": 3,
+    "stock": 50,
+    "category": "饮料"
+  },
+  {
+    "id": 2,
+    "name": "雪碧",
+    "price": 3,
+    "stock": 30,
+    "category": "饮料"
+  },
+  {
+    "id": 3,
+    "name": "薯片",
+    "price": 5,
+    "stock": 20,
+    "category": "零食"
+  },
+  {
+    "id": 4,
+    "name": "方便面",
+    "price": 4,
+    "stock": 40,
+    "category": "食品"
+  },
+  {
+    "id": 5,
+    "name": "矿泉水",
+    "price": 2,
+    "stock": 100,
+    "category": "饮料"
+  },
+  {
+    "id": 6,
+    "name": "面包",
+    "price": 6,
+    "stock": 15,
+    "category": "食品"
+  }
+]
