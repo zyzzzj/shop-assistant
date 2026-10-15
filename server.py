@@ -5,7 +5,7 @@ import jwt
 import bcrypt
 import requests
 import os
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from functools import wraps
 
 app = Flask(__name__)
@@ -119,7 +119,7 @@ def login():
             token = jwt.encode({
                 'id': admin['id'],
                 'role': 'admin',
-                'exp': datetime.utcnow() + timedelta(hours=24)
+                'exp': datetime.now(timezone.utc) + timedelta(hours=24)
             }, JWT_SECRET, algorithm='HS256')
             cursor.close()
             conn.close()
@@ -132,7 +132,7 @@ def login():
             token = jwt.encode({
                 'id': user['id'],
                 'role': 'user',
-                'exp': datetime.utcnow() + timedelta(hours=24)
+                'exp': datetime.now(timezone.utc) + timedelta(hours=24)
             }, JWT_SECRET, algorithm='HS256')
             cursor.close()
             conn.close()
