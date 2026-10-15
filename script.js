@@ -80,9 +80,12 @@ function showChat() {
     document.getElementById('chatContainer').style.display = 'flex';
     document.getElementById('adminContainer').style.display = 'none';
 
-    // 管理员显示商品管理按钮
+    // 管理员显示商品管理按钮，普通用户隐藏
+    const adminBtn = document.getElementById('adminBtn');
     if (isAdmin) {
-        document.getElementById('adminBtn').style.display = 'inline-block';
+        adminBtn.style.display = 'inline-block';
+    } else {
+        adminBtn.style.display = 'none';
     }
 
     // 添加欢迎消息
