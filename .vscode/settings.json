@@ -3,8 +3,11 @@
     "python.analysis.extraPaths": [
         "${workspaceFolder}"
     ],
-    "python.linting.enabled": true,
+    "python.analysis.typeCheckingMode": "off",
+    "python.linting.enabled": false,
     "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": false,
-    "python.analysis.typeCheckingMode": "basic"
+    "python.linting.mypyEnabled": false,
+    "python.terminal.activateEnvironment": false,
+    "python.analysis.diagnosticMode": "off"
 }
